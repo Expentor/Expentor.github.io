@@ -7,37 +7,41 @@
     <!-- Configura el viewport para que la página sea adaptable a diferentes dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título de la página que se mostrará en la pestaña del navegador -->
-    <title>Actividad6</title>
+    <title>Control de Dispositivo IoT</title>
 
     <!-- Enlace a una hoja de estilo externa llamada 'style.css' -->
     <link rel="stylesheet" href="style.css">
-    <!-- Enlace a la biblioteca Font Awesome para usar iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <div class="container">
+        <!-- Tarjeta con el diseño de control -->
+        <div class="card">
+            <h1>TwT</h1>
 
-    <!-- Control deslizante (slider) con valor mínimo de 5 y máximo de 20. 
-         El valor inicial es 5. El atributo 'oninput' ejecuta la función 'outputUpdate(val)' cuando el usuario interactúa con el slider. -->
-    <input type="range" min="5" max="20" step="1" value="5" class="slider" id="Ktms" oninput="outputUpdate(val)">
+            <!-- Control con botones para incrementar y decrementar el valor -->
+            <label>Incremente el valor:</label>
+            <div class="button-group">
+                <!-- Botón para reducir el valor -->
+                <button id="decrease" onclick="updateValue(-1)">-</button>
 
-    <!-- Elemento 'output' que mostrará el valor del control deslizante. Está vinculado al control deslizante con el id 'Kvaluetms'. -->
-    <output for="rango" id="Kvaluetms"></output>
+                <!-- Mostrando el valor actual -->
+                <span id="Kvaluetms">#</span>
 
-    <!-- Span para mostrar una fórmula o texto matemático, representado por '{TMS}'. -->
-    <span id="TM">\[{TMS}\]</span>
+                <!-- Botón para aumentar el valor -->
+                <button id="increase" onclick="updateValue(1)">+</button>
+            </div>
 
-    <!-- Scripts externos añadidos al documento -->
+            <p>x5</p>
+
+            <!-- Mostrar el resultado de la respuesta del dispositivo -->
+            <p>Resultado:</p>
+            <p id="result">???</p>
+        </div>
+    </div>
 
     <!-- Biblioteca Particle API, que permite la interacción con dispositivos de hardware de Particle (IoT) -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
-
-    <!-- Bibliotecas de jQuery para simplificar la manipulación del DOM y AJAX -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-    <!-- Script de MathJax para renderizar notación matemática (LaTeX) en el navegador -->
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- Enlace a un archivo de script local llamado 'script.js' que contiene lógica JavaScript personalizada -->
     <script type="text/javascript" src="script.js"></script>
