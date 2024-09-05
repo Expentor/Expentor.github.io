@@ -1,0 +1,17 @@
+body {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+.card-header {
+    font-size: 24px;
+}
+
+.card-title {
+    font-size: 48px;
+    margin: 0;
+}
